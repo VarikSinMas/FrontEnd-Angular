@@ -1,0 +1,23 @@
+/* Fondo con degradado en tonos rojos y negros */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #a00000, #000000);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /* Botón estilizado */
+  .btn-danger {
+    background-color: #d00000;
+    border: none;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .btn-danger:hover {
+    transform: scale(1.1);
+    background-color: #ff0000;
+  }
+  

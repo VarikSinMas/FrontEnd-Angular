@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <button class="btn btn-dark mb-3" routerLink="/players">⬅ Volver</button>
+  
+    <div class="card player-detail">
+      <div class="row">
+        <div class="col-md-4">
+          <img [src]="player?.image" class="img-fluid" alt="{{ player?.name }}">
+        </div>
+        <div class="col-md-8">
+          <h2>{{ player?.name }}</h2>
+          <p><strong>Posición:</strong> {{ player?.position }}</p>
+          <p><strong>Edad:</strong> {{ player?.age }}</p>
+          <p><strong>Altura:</strong> {{ player?.height }} cm</p>
+  
+          <!-- Video de presentación -->
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" [src]="player?.videoUrl" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

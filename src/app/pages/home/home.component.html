@@ -1,0 +1,34 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">🏀 DevFlow</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="goToPlayers()">Jugadores</a>
+
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <header class="hero d-flex align-items-center justify-content-center text-center">
+    <div class="container text-white">
+      <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Bienvenido al Equipo Basket</h1>
+      <p class="lead animate__animated animate__fadeInUp">Descubre nuestra plantilla de jugadores y sus estadísticas.</p>
+      <a routerLink="/players" (click)="goToPlayers()" class="btn btn-lg btn-danger">
+        Ver más
+      </a>
+      
+    </div>
+  </header>
+  

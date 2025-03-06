@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Plantilla de Jugadores</h2>
+
+    <!-- Buscador -->
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Buscar jugador..." [(ngModel)]="searchText">
+    </div>
+
+    <!-- Filtro por posición -->
+    <div class="d-flex justify-content-center flex-wrap mb-4">
+        <button *ngFor="let position of positions" 
+                class="btn btn-outline-danger mx-1 mb-2" 
+                (click)="filterByPosition(position)">
+            {{ position }}
+        </button>
+    </div>
+
+    <!-- Lista de jugadores -->
+    <div class="row">
+        <div *ngFor="let player of filteredPlayers()" class="col-md-4 mb-4">
+            <div class="card player-card shadow-sm" (click)="viewPlayer(player.id)">
+                <img [src]="player.image" class="card-img-top" alt="{{ player.name }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold">{{ player.name }}</h5>
+                    <p class="card-text text-muted">{{ player.position }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
