@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class PlayersComponent implements OnInit {
   searchText = '';
-  positions = ['Todas','Base', 'Escolta', 'Alero', 'Ala-Pívot', 'Pívot'];
+  positions = ['Todos','Base', 'Escolta', 'Alero', 'Ala-Pívot', 'Pívot'];
   players: any[] = [];
 
   constructor(private playerService: PlayerService, private router: Router) {}
@@ -31,7 +31,7 @@ export class PlayersComponent implements OnInit {
   filterByPosition(position: string) {
     this.players = this.playerService.getPlayers().filter(p => p.position === position);
 
-    if (position === 'Todas'){
+    if (position === 'Todos'){
       this.players = this.playerService.getPlayers();
     }
   }
