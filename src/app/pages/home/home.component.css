@@ -1,5 +1,5 @@
 
-/* Estilo general para la hero section */
+
 /* Estilo general para la hero section */
 .hero {
   height: 100vh;
@@ -45,18 +45,6 @@
   opacity: 0; /* Inicialmente invisible */
   animation: fadeInUp 2s forwards; /* Animación de entrada */
   animation-delay: 0.5s; /* Retraso en la animación */
-}
-
-/* Estilo para el botón */
-.hero .btn-danger {
-  background-color: #d00000;
-  border: none;
-  transition: transform 0.2s ease-in-out;
-}
-
-.hero .btn-danger:hover {
-  transform: scale(1.1);
-  background-color: #ff0000;
 }
 
 /* Animaciones de las letras */

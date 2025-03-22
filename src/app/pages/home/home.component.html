@@ -4,22 +4,20 @@
   <!-- Video de fondo -->
   <video autoplay muted loop class="hero-video">
     <source src="assets/videos/intro.mp4" type="video/mp4">
+    <source src="assets/videos/intro.webm" type="video/webm">
+    <source src="assets/videos/intro.ogv" type="video/ogg">
     Tu navegador no soporta el video.
   </video>
 
   <!-- Contenedor de texto con animaciones -->
   <div class="container text-white">
-    <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Bienvenido a DevFlow</h1>
-    <p class="lead animate__animated animate__fadeInUp">Descubre nuestra plantilla de jugadores y sus estadísticas.</p>
+    <h1 id="hero-title" class="display-4 fw-bold">Bienvenido a DevFlow</h1>
+    <p id="hero-text" class="lead">Descubre nuestro equipo y sus jugadores</p>
     <a href="#jugadores" class="btn btn-lg btn-danger">
       Ver más
     </a>
   </div>
 </header>
-
-
-
-
 
 <!-- Contenedor 1 (Información del equipo) -->
 <div class="container-fluid hero">
@@ -60,3 +58,30 @@
     </div>
   </div>
 </section>
+
+<script>
+  window.onload = function() {
+  var video = document.getElementById("hero-video");
+  var title = document.getElementById("hero-title");
+  var text = document.getElementById("hero-text");
+
+  // Asegurarse de que el video esté en silencio y listo para reproducir
+  video.muted = true;  // Asegura que el video esté en silencio
+  video.currentTime = 0;  // Reinicia el video al principio
+  video.play();  // Forzar la reproducción del video
+
+  // Esperar a que el video pueda reproducirse
+  video.oncanplaythrough = function() {
+    // Una vez que el video se pueda reproducir, aplicamos las animaciones
+    title.classList.add('animate__fadeInDown');
+    text.classList.add('animate__fadeInUp');
+  };
+
+  // Si el video no comienza automáticamente, forzamos un reinicio después de 100ms
+  setTimeout(function() {
+    if (video.paused) {
+      video.play();
+    }
+  }, 100);
+};
+</script>
