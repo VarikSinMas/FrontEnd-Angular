@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* 🎯 Buscador con icono */
 .search-box {
     max-width: 400px;
@@ -42,3 +43,69 @@
     object-fit: cover;
   }
   
+=======
+/* 🎯 Buscador con icono */
+.search-box {
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* 🎯 Botones de filtro */
+.filter-btn {
+  transition: all 0.3s ease;
+}
+.filter-btn:hover {
+  background-color: #ff4500;
+  color: white;
+}
+
+/* Estilo para la tarjeta de jugador */
+.player-card {
+  background-color: #444; /* Fondo oscuro de la tarjeta */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 20px;
+  text-align: center;
+  min-width: 250px; /* Asegura que todas las tarjetas tengan un tamaño mínimo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el efecto hover */
+  cursor: pointer; /* Cambia el puntero a mano cuando se pasa por encima */
+  overflow: hidden; /* Evita que la imagen se salga de los bordes redondeados */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Efecto hover sobre la tarjeta (similar al hero) */
+.player-card:hover {
+  transform: translateY(-5px); /* Eleva la tarjeta al pasar el ratón */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave al pasar el ratón */
+}
+
+/* Estilo para la imagen del jugador */
+.player-card img {
+  border-radius: 10px;
+  width: 100%; /* Hace que la imagen ocupe todo el ancho disponible */
+  height: 200px; /* Ajusta la altura de la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el área de la tarjeta sin distorsionarse */
+}
+
+/* Estilo para el título y el texto dentro de la tarjeta */
+.player-card .card-body {
+  color: white;
+}
+
+.player-card h5 {
+  font-size: 1.3rem; /* Tamaño del nombre del jugador */
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.player-card p {
+  font-size: 1rem;
+  color:rgb(196, 90, 90); 
+}
+
+
+>>>>>>> a6f9468530a3d91f3989422301d458515ee6a53d

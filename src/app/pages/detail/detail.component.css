@@ -1,0 +1,83 @@
+/* Aseguramos que el contenedor esté centrado */
+.container {
+    max-width: 900px;
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 20px;
+}
+
+/* Estilo para la tarjeta de detalles del jugador */
+.player-detail {
+    display: flex;
+    flex-direction: row; /* Alineación horizontal */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #ffffff;
+    height: 100%; /* Se asegura que ocupe todo el espacio vertical disponible */
+}
+
+.player-detail .col-md-4 {
+    flex: 0 0 35%; /* Hacer la imagen más grande cambiando el valor de flex */
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Columna para el texto */
+.player-detail .col-md-8 {
+    flex: 1;
+}
+
+/* Imagen con estilo adecuado */
+.player-detail img-fluid {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Estilo de los textos */
+.player-detail h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #333;
+}
+
+.player-detail p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Estilos del video */
+.embed-responsive {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    margin-top: 20px;
+    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+}
+
+.embed-responsive video {
+    max-width: 100%; /* Hace que el video ocupe todo el ancho disponible */
+    border-radius: 8px;
+}
+
+/* Responsividad: Ajustar para pantallas pequeñas */
+@media (max-width: 768px) {
+    .player-detail {
+        flex-direction: column; /* Apilar imagen y texto */
+    }
+    .player-detail .col-md-4,
+    .player-detail .col-md-8 {
+        flex: 1 0 100%; /* Apilar columnas */
+        padding-right: 0;
+    }
+
+    /* Asegurarse que el video ocupe el 100% en pantallas pequeñas */
+    .embed-responsive video {
+        width: 100%; /* Hace que el video ocupe todo el ancho disponible */
+    }
+}

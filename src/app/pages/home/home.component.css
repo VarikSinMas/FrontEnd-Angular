@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Fondo con degradado en tonos rojos y negros */
 .hero {
     height: 100vh;
@@ -21,3 +22,228 @@
     background-color: #ff0000;
   }
   
+=======
+
+
+/* Estilo general para la hero section */
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Estilo para el video de fondo */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video cubra todo el contenedor */
+  z-index: -1; /* Coloca el video detrás del contenido */
+  pointer-events: none; /* Evita que el video interfiera con las interacciones del usuario */
+}
+
+/* Estilo para el contenedor de texto sobre el video */
+.hero .container {
+  position: relative; /* Asegura que el contenido se quede encima del video */
+  z-index: 1; /* Mantiene el texto por encima del video */
+}
+
+/* Animación para el título */
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  opacity: 0; /* Inicialmente invisible */
+  animation: fadeInDown 1.5s forwards; /* Animación de entrada */
+}
+
+/* Animación para el párrafo */
+.hero p {
+  font-size: 1.5rem;
+  opacity: 0; /* Inicialmente invisible */
+  animation: fadeInUp 2s forwards; /* Animación de entrada */
+  animation-delay: 0.5s; /* Retraso en la animación */
+}
+
+/* Animaciones de las letras */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Estilo Info Equipo */
+/* Imagen del lado izquierdo, alineada sin margen */
+.team-image {
+  width: 110%; /* Puedes ajustar el tamaño máximo que prefieras */
+  height: auto; /* Mantiene la proporción original de la imagen */
+  margin-right: 100px; /* Aumenta el espacio entre la imagen y el texto */
+  flex-shrink: 0; /* Evita que la imagen se reduzca en tamaño */
+}
+
+/* Contenedor de texto que sigue la curvatura de la imagen */
+.text-container {
+  color: white;
+  font-family: 'Arial', sans-serif;
+  flex-grow: 1; /* Permite que el contenedor de texto ocupe el espacio restante */
+  padding-left: 20px; /* Aumenta el padding para darle más espacio al texto */
+  max-width: 50%; /* Limita el ancho del contenedor de texto para que no ocupe toda la pantalla */
+  overflow: hidden; /* Evita que el texto se desborde */
+}
+
+/* Título */
+.text-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Texto que sigue la curvatura de la imagen */
+.curved-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-top: 20px;
+  position: relative;
+}
+
+/* Asegurar que el texto sigue la curvatura de la imagen */
+.curved-text::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -40px;
+  width: 120%;
+  height: 120%;
+  border-radius: 50%; /* Forma redonda para seguir la curvatura */
+  border: 2px solid transparent;
+  clip-path: circle(50% at 50% 50%); /* Define la forma circular para alinear el texto */
+  z-index: -1;
+}
+
+/* Botón estilizado */
+.btn-danger {
+  background-color: #d00000;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn-danger:hover {
+  transform: scale(1.1);
+  background-color: #ff0000;
+}
+
+/* Estilo para la Sección de Jugadores */
+.jugadores-section {
+  background-color: #333; /* Fondo oscuro para la sección de jugadores */
+  color: white;
+  padding: 50px 0;
+  position: relative; /* Posición relativa para manipular las posiciones de los elementos */
+  overflow: hidden; /* Oculta cualquier contenido desbordado */
+}
+
+/* Estilo para la barra de desplazamiento */
+.player-carousel {
+  display: flex;
+  overflow-x: auto; /* Desplazamiento solo horizontal */
+  overflow-y: hidden; /* Evitar barra de desplazamiento vertical */
+  gap: 20px; /* Espacio entre las tarjetas */
+  scroll-snap-type: x mandatory; /* Desplazamiento ajustado a la unidad */
+  -webkit-overflow-scrolling: touch; /* Para soporte en dispositivos móviles */
+  padding-bottom: 10px; /* Añadir un pequeño espacio para que no se vea el borde inferior */
+  scrollbar-width: thin; /* Para Firefox: barra de desplazamiento delgada */
+  scrollbar-color: #d00000 #333; /* Para Firefox: color del thumb (deslizador) y track (fondo) */
+}
+
+/* Para los navegadores basados en Webkit (Chrome, Safari, Edge) */
+.player-carousel::-webkit-scrollbar {
+  height: 8px; /* Altura de la barra de desplazamiento */
+}
+
+.player-carousel::-webkit-scrollbar-track {
+  background-color: #333; /* Color del track (fondo de la barra de desplazamiento) */
+  border-radius: 10px; /* Bordes redondeados para el track */
+}
+
+.player-carousel::-webkit-scrollbar-thumb {
+  background-color: #d00000; /* Color del thumb (deslizador) */
+  border-radius: 10px; /* Bordes redondeados para el thumb */
+  border: 2px solid #333; /* Bordes de color para el thumb */
+}
+
+.player-carousel::-webkit-scrollbar-thumb:hover {
+  background-color: #ff0000; /* Cambiar color cuando se pasa el mouse por encima */
+}
+
+.player-card {
+  background-color: #444; /* Fondo de las tarjetas de los jugadores */
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  min-width: 250px; /* Ancho mínimo para cada tarjeta */
+  flex-shrink: 0; /* No permite que las tarjetas se reduzcan */
+  transition: transform 0.2s ease;
+  scroll-snap-align: start; /* Hace que las tarjetas se alineen al principio cuando se desplazan */
+}
+
+.player-card img {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 200px; /* Tamaño máximo de la imagen del jugador */
+  height: auto;
+}
+
+.player-card h4 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.player-card p {
+  font-size: 1rem;
+  color: #bbb;
+}
+
+/* Estilo para la Sección de Merchandising */
+.merchandising-section {
+  background: linear-gradient(to bottom, #ff0000, #000000); /* Degradado de rojo a negro */
+  color: white;
+  padding: 50px 0;
+  position: relative; /* Posición relativa para manipular las posiciones de los elementos */
+  overflow: hidden; /* Oculta cualquier contenido desbordado */
+}
+
+/* Contenedor de videos o imágenes en la sección de merchandising */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Bordes redondeados para las imágenes */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+
+/* Asegurar que las imágenes se ajustan bien dentro de los contenedores */
+.merchandising-section img {
+  width: 100%; /* Hace que las imágenes ocupen todo el ancho disponible */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover; /* Asegura que las imágenes cubran todo el contenedor */
+}
+
+/* Títulos debajo de las imágenes en merchandising */
+.merchandising-section h5 {
+  font-size: 1.1rem;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+>>>>>>> a6f9468530a3d91f3989422301d458515ee6a53d
