@@ -1,20 +1,77 @@
-/* Fondo con degradado en tonos rojos y negros */
+
+/* Estilo general para la hero section */
+/* Estilo general para la hero section */
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #a00000, #000000);
-  background-size: cover; /* Asegura que la imagen cubra toda el área del hero */
-  background-position: center center; /* Centra la imagen tanto horizontal como verticalmente */
-  background-repeat: no-repeat;
-  color: white;
-  display: flex;
-  align-items: center; /* Centra el contenido verticalmente */
-  justify-content: center; /* Centra el contenido horizontalmente */
-  text-align: center; /* Alinea el texto al centro */
-  padding: 0 20px; /* Agrega espacio alrededor */
   position: relative;
   overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
 }
 
+/* Estilo para el video de fondo */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video cubra todo el contenedor */
+  z-index: -1; /* Coloca el video detrás del contenido */
+  pointer-events: none; /* Evita que el video interfiera con las interacciones del usuario */
+}
+
+/* Estilo para el contenedor de texto sobre el video */
+.hero .container {
+  position: relative; /* Asegura que el contenido se quede encima del video */
+  z-index: 1; /* Mantiene el texto por encima del video */
+}
+
+/* Animación para el título */
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  opacity: 0; /* Inicialmente invisible */
+  animation: fadeInDown 1.5s forwards; /* Animación de entrada */
+}
+
+/* Animación para el párrafo */
+.hero p {
+  font-size: 1.5rem;
+  opacity: 0; /* Inicialmente invisible */
+  animation: fadeInUp 2s forwards; /* Animación de entrada */
+  animation-delay: 0.5s; /* Retraso en la animación */
+}
+
+/* Estilo para el botón */
+.hero .btn-danger {
+  background-color: #d00000;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.hero .btn-danger:hover {
+  transform: scale(1.1);
+  background-color: #ff0000;
+}
+
+/* Animaciones de las letras */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Estilo Info Equipo */
 /* Imagen del lado izquierdo, alineada sin margen */
 .team-image {
   width: 110%; /* Puedes ajustar el tamaño máximo que prefieras */
