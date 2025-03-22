@@ -31,7 +31,7 @@ export class PlayerService {
     { id: 17, name: 'Zion Williamson', height:'1,98', age: '24', position: 'Ala-Pívot', number: 1, team: 'New Orleans Pelicans' , imageUrl: 'assets/fotos/zion.png', videoUrl: 'zion.mp4' },
     { id: 18, name: 'Julius Randle', height:'2,06', age: '30', position: 'Ala-Pívot', number: 30, team: 'Minnesota Timberwolves', imageUrl: 'assets/fotos/randle.png', videoUrl: 'randle.mp4'  },
     { id: 19, name: 'Pascal Siakam', height:'2,03', age: '30', position: 'Ala-Pívot', number: 43, team: 'Indiana Pacers', imageUrl: 'assets/fotos/siakam.png', videoUrl: 'siakam.mp4'  },
-    { id: 20, name: 'Evan Mobley', height:'2,11', age: '23', position: 'Ala-Pívot', number: 4, team: 'Cleveland Cavaliers', imageUrl: 'assets/fotos/mobley.jpg', videoUrl: 'mobley.mp4' },
+    { id: 20, name: 'Evan Mobley', height:'2,11', age: '23', position: 'Ala-Pívot', number: 4, team: 'Cleveland Cavaliers', imageUrl: 'assets/fotos/mobley.png', videoUrl: 'mobley.mp4' },
 
     // Pívot (Center - C)
     { id: 21, name: 'Nikola Jokić', height:'2,11', age: '30', position: 'Pívot', number: 15, team: 'Denver Nuggets', imageUrl: 'assets/fotos/jokic.png', videoUrl: 'jokic.mp4'  },

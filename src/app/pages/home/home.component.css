@@ -176,6 +176,7 @@
   width: 100%;
   max-width: 200px; /* Tamaño máximo de la imagen del jugador */
   height: auto;
+  background-color: transparent;
 }
 
 .player-card h4 {
