@@ -188,6 +188,12 @@
   color: #bbb;
 }
 
+.player-card:hover {
+  background-color: #666666;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
 /* Estilo para la Sección de Merchandising */
 .merchandising-section {
   background: linear-gradient(to bottom, #ff0000, #000000); /* Degradado de rojo a negro */
