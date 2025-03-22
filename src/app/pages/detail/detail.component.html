@@ -1,11 +1,16 @@
 <div class="container">
-  <button class="btn btn-dark mb-3" (click)="goToHome()">⬅ Volver al Inicio</button>
+  <!-- Botón para regresar a la lista de jugadores -->
+  <button class="btn btn-dark mb-3" (click)="goToPlayers()">⬅ Lista de Jugadores</button>
 
-  <div class="player-detail">
+  <!-- Detalles del jugador -->
+  <div *ngIf="player">
     <div class="row">
+      <!-- Imagen del jugador -->
       <div class="col-md-4">
         <img [src]="player?.imageUrl" class="img-fluid" alt="{{ player?.name }}">
       </div>
+
+      <!-- Información del jugador -->
       <div class="col-md-8">
         <h2>{{ player?.name }}</h2>
         <p><strong>Posición:</strong> {{ player?.position }}</p>
@@ -16,12 +21,23 @@
       </div>
 
       <!-- Video de presentación -->
-  <div class="embed-responsive">
-    <video controls>
-      <source [src]="'assets/videos/' + player?.videoUrl" type="video/mp4">
-      Tu navegador no soporta el elemento de video.
-    </video>
-  </div>
+      <div class="col-12">
+        <video controls>
+          <source [src]="'assets/videos/' + player?.videoUrl" type="video/mp4">
+          Tu navegador no soporta el elemento de video.
+        </video>
+      </div>
+    </div>
+
+    <!-- Botones para navegar a los jugadores anterior y siguiente -->
+    <div class="col-12 text-center mt-4">
+      <button class="btn btn-danger" (click)="changePlayer('previous')" 
+              [disabled]="!playerService.getPreviousPlayer(player?.id)">
+        ⬅ Anterior
+      </button>
+      <button [disabled]="!player || playerService.getNextPlayer(player?.id) === null">
+        Next Player
+      </button>
     </div>
   </div>
 </div>

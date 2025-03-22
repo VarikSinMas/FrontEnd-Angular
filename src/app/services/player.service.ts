@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class PlayerService {
-  private players = [
+  public players = [
     // Base (Point Guard - PG)
     { id: 1, name: 'Stephen Curry', height:'1,88', age: '37', position: 'Base', number: 30, team: 'Golden State Warriors', imageUrl: 'assets/fotos/curry.png', videoUrl: 'StephCurry.mp4'  },
     { id: 2, name: 'Damian Lillard', height:'1,88', age: '37', position: 'Base', number: 0, team: 'Milwaukee Bucks', imageUrl: 'assets/fotos/lillard.png', videoUrl: 'lillard.mp4' },
@@ -53,5 +53,21 @@ export class PlayerService {
 
   getPlayersByPosition(position: string) {
     return this.players.filter(player => player.position === position);
+  }
+
+  getPreviousPlayer(currentId: number) {
+    const index = this.players.findIndex(player => player.id === currentId);
+    if (index > 0) {
+      return this.players[index - 1];
+    }
+    return null; // No hay jugador anterior
+  }
+  
+  getNextPlayer(currentId: number) {
+    const index = this.players.findIndex(player => player.id === currentId);
+    if (index < this.players.length - 1) {
+      return this.players[index + 1];
+    }
+    return null; // No hay siguiente jugador
   }
 }

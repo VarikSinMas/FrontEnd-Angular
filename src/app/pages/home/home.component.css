@@ -187,3 +187,21 @@
   font-size: 1rem;
   color: #bbb;
 }
+
+/* Estilos para el botón */
+.jugadores-section .btn-danger {
+  background-color: #d00000;  /* Rojo */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  color: white;  /* El texto será blanco */
+  text-decoration: none;  /* Evitar el subrayado por defecto de los enlaces */
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.jugadores-section .btn-danger:hover {
+  background-color: #ff0000;  /* Rojo más brillante al pasar el ratón */
+  transform: scale(1.05);  /* Agrandar un poco el botón al pasar el ratón */
+}
