@@ -1,43 +1,21 @@
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">🏀 DevFlow</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="/">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="goToPlayers()">Jugadores</a>
-        </li>
-      </ul>
-    </div>
+<!-- Hero Section -->
+<header class="hero d-flex align-items-center justify-content-center text-center">
+  <div class="container text-white">
+    <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Bienvenido a DevFlow</h1>
+    <p class="lead animate__animated animate__fadeInUp">Descubre nuestra plantilla de jugadores y sus estadísticas.</p>
+    <a href="#jugadores" class="btn btn-lg btn-danger">
+      Ver más
+    </a>
   </div>
-</nav>
+</header>
 
-
-  <!-- Hero Section -->
-  <header class="hero d-flex align-items-center justify-content-center text-center">
-    <div class="container text-white">
-      <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Bienvenido a DevFlow</h1>
-      <p class="lead animate__animated animate__fadeInUp">Descubre nuestra plantilla de jugadores y sus estadísticas.</p>
-      <a routerLink="/players" (click)="goToPlayers()" class="btn btn-lg btn-danger">
-        Ver más
-      </a>
-    </div>
-  </header>
-
-
-  <!-- Contenedor 1 -->
+<!-- Contenedor 1 (Información del equipo) -->
 <div class="container-fluid hero">
   <div class="row align-items-center">
     <!-- Contenedor para alinear la imagen a la izquierda -->
     <div class="col-md-4 team-image-container">
       <img
-        src="assets/fotos/team-logo.jpg"
+        src="assets/fotos/pngegg.png"
         alt="Logo del Equipo"
         class="team-image"
       />
@@ -45,13 +23,28 @@
 
     <!-- Texto Lado Derecho -->
     <div class="col-md-8 text-container">
-      <h2 class="fw-bold">Sence </h2>
+      <h2 class="fw-bold">Sence 1979</h2>
       <p class="curved-text">
-        La pasión, la dedicación y el trabajo en equipo nos impulsan hacia el éxito. ¡Conoce a nuestros jugadores y forma parte de esta gran familia!
+        El DevFlow Basket Team es un grupo apasionado de jugadores que combinan talento, esfuerzo y trabajo en equipo para alcanzar la victoria. Con una mezcla de experiencia y juventud, nuestro equipo se enfoca en el juego limpio, la estrategia y la dedicación en cada entrenamiento. Estamos comprometidos en superarnos día a día, buscando siempre mejorar y dar lo mejor en cada partido. ¡Únete a nosotros y forma parte de esta increíble familia deportiva!
       </p>
-      <a routerLink="/players" class="btn btn-danger">
-        Conocer más
-      </a>
     </div>
   </div>
 </div>
+
+
+<!-- Sección de Jugadores -->
+<section id="jugadores" class="jugadores-section py-5">
+  <div class="container">
+    <h2 class="text-center text-white mb-4">Plantilla de Jugadores</h2>
+
+    <!-- Contenedor de tarjetas de jugadores (deslizamiento horizontal) -->
+    <div class="player-carousel">
+      <div *ngFor="let player of filteredPlayers()" class="player-card" (click)="viewPlayer(player.id)">
+        <!-- Usar 'imageUrl' en lugar de 'image' -->
+        <img [src]="player.imageUrl" class="img-fluid mb-3" alt="{{ player.name }}">
+        <h4 class="text-white">{{ player.name }}</h4>
+        <p class="text-white">{{ player.position }}</p>
+      </div>
+    </div>
+  </div>
+</section>

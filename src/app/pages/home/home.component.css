@@ -2,23 +2,24 @@
 .hero {
   height: 100vh;
   background: linear-gradient(135deg, #a00000, #000000);
+  background-size: cover; /* Asegura que la imagen cubra toda el área del hero */
+  background-position: center center; /* Centra la imagen tanto horizontal como verticalmente */
+  background-repeat: no-repeat;
   color: white;
   display: flex;
-  align-items: center;
-  justify-content: flex-start; /* Asegura que todo el contenido esté alineado a la izquierda */
-  text-align: left; /* Alineación de texto a la izquierda */
-  padding: 0 20px; /* Da algo de espacio alrededor */
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  text-align: center; /* Alinea el texto al centro */
+  padding: 0 20px; /* Agrega espacio alrededor */
   position: relative;
-  overflow: hidden; /* Asegura que no se desborde contenido */
+  overflow: hidden;
 }
 
 /* Imagen del lado izquierdo, alineada sin margen */
 .team-image {
-  width: 150%; /* Puedes ajustar el tamaño máximo que prefieras */
+  width: 110%; /* Puedes ajustar el tamaño máximo que prefieras */
   height: auto; /* Mantiene la proporción original de la imagen */
-  border-radius: 20px; /* Bordes redondeados en la imagen */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra suave alrededor de la imagen */
-  margin-right: 40px; /* Aumenta el espacio entre la imagen y el texto */
+  margin-right: 100px; /* Aumenta el espacio entre la imagen y el texto */
   flex-shrink: 0; /* Evita que la imagen se reduzca en tamaño */
 }
 
@@ -70,4 +71,74 @@
 .btn-danger:hover {
   transform: scale(1.1);
   background-color: #ff0000;
+}
+
+/* Estilo para la Sección de Jugadores */
+.jugadores-section {
+  background-color: #333; /* Fondo oscuro para la sección de jugadores */
+  color: white;
+  padding: 50px 0;
+  position: relative; /* Posición relativa para manipular las posiciones de los elementos */
+  overflow: hidden; /* Oculta cualquier contenido desbordado */
+}
+
+/* Estilo para la barra de desplazamiento */
+.player-carousel {
+  display: flex;
+  overflow-x: auto; /* Desplazamiento solo horizontal */
+  overflow-y: hidden; /* Evitar barra de desplazamiento vertical */
+  gap: 20px; /* Espacio entre las tarjetas */
+  scroll-snap-type: x mandatory; /* Desplazamiento ajustado a la unidad */
+  -webkit-overflow-scrolling: touch; /* Para soporte en dispositivos móviles */
+  padding-bottom: 10px; /* Añadir un pequeño espacio para que no se vea el borde inferior */
+  scrollbar-width: thin; /* Para Firefox: barra de desplazamiento delgada */
+  scrollbar-color: #d00000 #333; /* Para Firefox: color del thumb (deslizador) y track (fondo) */
+}
+
+/* Para los navegadores basados en Webkit (Chrome, Safari, Edge) */
+.player-carousel::-webkit-scrollbar {
+  height: 8px; /* Altura de la barra de desplazamiento */
+}
+
+.player-carousel::-webkit-scrollbar-track {
+  background-color: #333; /* Color del track (fondo de la barra de desplazamiento) */
+  border-radius: 10px; /* Bordes redondeados para el track */
+}
+
+.player-carousel::-webkit-scrollbar-thumb {
+  background-color: #d00000; /* Color del thumb (deslizador) */
+  border-radius: 10px; /* Bordes redondeados para el thumb */
+  border: 2px solid #333; /* Bordes de color para el thumb */
+}
+
+.player-carousel::-webkit-scrollbar-thumb:hover {
+  background-color: #ff0000; /* Cambiar color cuando se pasa el mouse por encima */
+}
+
+.player-card {
+  background-color: #444; /* Fondo de las tarjetas de los jugadores */
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  min-width: 250px; /* Ancho mínimo para cada tarjeta */
+  flex-shrink: 0; /* No permite que las tarjetas se reduzcan */
+  transition: transform 0.2s ease;
+  scroll-snap-align: start; /* Hace que las tarjetas se alineen al principio cuando se desplazan */
+}
+
+.player-card img {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 200px; /* Tamaño máximo de la imagen del jugador */
+  height: auto;
+}
+
+.player-card h4 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.player-card p {
+  font-size: 1rem;
+  color: #bbb;
 }

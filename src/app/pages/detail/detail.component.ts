@@ -20,9 +20,8 @@ export class DetailComponent {
   }
 
   goToHome() {
-    this.router.navigate(['/players']); // Redirige al inicio (ruta principal)
+    this.router.navigate(['/']); // Redirige al inicio (ruta principal)
   }
-
 
 
 }
