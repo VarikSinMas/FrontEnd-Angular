@@ -16,12 +16,19 @@
       </div>
 
       <!-- Video de presentación -->
-  <div class="embed-responsive">
-    <video controls>
-      <source [src]="'assets/videos/' + player?.videoUrl" type="video/mp4">
-      Tu navegador no soporta el elemento de video.
-    </video>
+      <div class="embed-responsive">
+        <video #videoPlayer controls>
+          <source [src]="'assets/videos/' + player?.videoUrl + '?t=' + timeStamp" type="video/mp4">
+          Tu navegador no soporta el elemento de video.
+        </video>
+      </div>
+      
+
+  <div class="d-flex justify-content-between mt-4">
+    <button (click)="goToPrevious()" class="btn-nav" [disabled]="playerIndex === 0">Anterior</button>
+    <button (click)="goToNext()" class="btn-nav" [disabled]="playerIndex === players.length - 1">Siguiente</button>
   </div>
+
     </div>
   </div>
 </div>

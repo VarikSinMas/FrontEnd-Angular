@@ -13,7 +13,7 @@
      <!-- Filtro por posición (dropdown) -->
      <div class="d-flex justify-content-center mb-4">
         <select class="form-select w-auto" (change)="filterByPosition($event)">
-            <option value="">Selecciona una posición</option>
+            <option value="">Todas las posiciones</option>
             <option *ngFor="let position of positions" [value]="position">{{ position }}</option>
         </select>
     </div>

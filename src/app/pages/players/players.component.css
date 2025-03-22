@@ -17,7 +17,7 @@
 
 /* Estilo para la tarjeta de jugador */
 .player-card {
-  background-color: #444; /* Fondo oscuro de la tarjeta */
+  background-color: #ffffff; /* Fondo oscuro de la tarjeta */
   border-radius: 15px; /* Bordes redondeados */
   padding: 20px;
   text-align: center;
@@ -47,7 +47,7 @@
 
 /* Estilo para el título y el texto dentro de la tarjeta */
 .player-card .card-body {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .player-card h5 {
