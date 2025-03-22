@@ -28,8 +28,15 @@ export class PlayersComponent implements OnInit {
     );
   }
 
-  filterByPosition(position: string) {
-    this.players = this.playerService.getPlayers().filter(p => p.position === position);
+  filterByPosition(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    const position = selectElement.value;
+  
+    if (position) {
+      this.players = this.playerService.getPlayers().filter(p => p.position === position);
+    } else {
+      this.players = this.playerService.getPlayers(); // Si no se selecciona una posición, mostrar todos los jugadores
+    }
   }
 
   viewPlayer(id: number) {

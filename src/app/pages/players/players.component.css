@@ -58,32 +58,7 @@
 
 .player-card p {
   font-size: 1rem;
-  color:white; /* Texto en un color gris más suave */
+  color:rgb(196, 90, 90); 
 }
 
-/* Diseño de la barra de desplazamiento en el contenedor de los jugadores (si es necesario) */
-.player-carousel {
-  display: flex;
-  overflow-x: auto; /* Desplazamiento horizontal */
-  gap: 20px;
-  padding-bottom: 10px;
-  scroll-snap-type: x mandatory; /* Asegura que el desplazamiento se alinee a cada tarjeta */
-  -webkit-overflow-scrolling: touch; /* Mejora la experiencia en dispositivos móviles */
-}
 
-/* Estilo para la imagen en la parte superior de la tarjeta */
-.player-img-container {
-  width: 100%;
-  height: 200px; /* Establece una altura fija para la imagen */
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Estilo para las imágenes dentro del contenedor de las tarjetas */
-.player-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
-}

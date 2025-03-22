@@ -10,13 +10,12 @@
         <input type="text" class="form-control" placeholder="Buscar jugador..." [(ngModel)]="searchText">
     </div>
 
-    <!-- Filtro por posición -->
-    <div class="d-flex justify-content-center flex-wrap mb-4">
-        <button *ngFor="let position of positions" 
-                class="btn btn-outline-danger mx-1 mb-2" 
-                (click)="filterByPosition(position)">
-            {{ position }}
-        </button>
+     <!-- Filtro por posición (dropdown) -->
+     <div class="d-flex justify-content-center mb-4">
+        <select class="form-select w-auto" (change)="filterByPosition($event)">
+            <option value="">Selecciona una posición</option>
+            <option *ngFor="let position of positions" [value]="position">{{ position }}</option>
+        </select>
     </div>
 
     <!-- Lista de jugadores -->
