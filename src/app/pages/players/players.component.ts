@@ -35,4 +35,8 @@ export class PlayersComponent implements OnInit {
   viewPlayer(id: number) {
     this.router.navigate(['/player', id]);
   }
+
+  goHome() {
+    this.router.navigate(['/']); // Redirige al inicio (ruta principal)
+  }
 }
