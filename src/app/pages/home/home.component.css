@@ -1,23 +1,73 @@
 /* Fondo con degradado en tonos rojos y negros */
 .hero {
-    height: 100vh;
-    background: linear-gradient(135deg, #a00000, #000000);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  /* Botón estilizado */
-  .btn-danger {
-    background-color: #d00000;
-    border: none;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .btn-danger:hover {
-    transform: scale(1.1);
-    background-color: #ff0000;
-  }
-  
+  height: 100vh;
+  background: linear-gradient(135deg, #a00000, #000000);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Asegura que todo el contenido esté alineado a la izquierda */
+  text-align: left; /* Alineación de texto a la izquierda */
+  padding: 0 20px; /* Da algo de espacio alrededor */
+  position: relative;
+  overflow: hidden; /* Asegura que no se desborde contenido */
+}
+
+/* Imagen del lado izquierdo, alineada sin margen */
+.team-image {
+  width: 150%; /* Puedes ajustar el tamaño máximo que prefieras */
+  height: auto; /* Mantiene la proporción original de la imagen */
+  border-radius: 20px; /* Bordes redondeados en la imagen */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra suave alrededor de la imagen */
+  margin-right: 40px; /* Aumenta el espacio entre la imagen y el texto */
+  flex-shrink: 0; /* Evita que la imagen se reduzca en tamaño */
+}
+
+/* Contenedor de texto que sigue la curvatura de la imagen */
+.text-container {
+  color: white;
+  font-family: 'Arial', sans-serif;
+  flex-grow: 1; /* Permite que el contenedor de texto ocupe el espacio restante */
+  padding-left: 20px; /* Aumenta el padding para darle más espacio al texto */
+  max-width: 50%; /* Limita el ancho del contenedor de texto para que no ocupe toda la pantalla */
+  overflow: hidden; /* Evita que el texto se desborde */
+}
+
+/* Título */
+.text-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Texto que sigue la curvatura de la imagen */
+.curved-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-top: 20px;
+  position: relative;
+}
+
+/* Asegurar que el texto sigue la curvatura de la imagen */
+.curved-text::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -40px;
+  width: 120%;
+  height: 120%;
+  border-radius: 50%; /* Forma redonda para seguir la curvatura */
+  border: 2px solid transparent;
+  clip-path: circle(50% at 50% 50%); /* Define la forma circular para alinear el texto */
+  z-index: -1;
+}
+
+/* Botón estilizado */
+.btn-danger {
+  background-color: #d00000;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn-danger:hover {
+  transform: scale(1.1);
+  background-color: #ff0000;
+}

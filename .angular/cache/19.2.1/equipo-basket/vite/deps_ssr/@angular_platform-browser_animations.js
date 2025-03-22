@@ -2,10 +2,10 @@ import { createRequire } from 'module';const require = createRequire(import.meta
 import {
   BrowserModule,
   DomRendererFactory2
-} from "./chunk-M2QDVYW3.js";
+} from "./chunk-4RN7Z2QI.js";
 import {
   DOCUMENT
-} from "./chunk-LCBAU2VD.js";
+} from "./chunk-43OHSBSP.js";
 import {
   ANIMATION_MODULE_TYPE,
   Inject,
@@ -22,7 +22,7 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-62672OIL.js";
+} from "./chunk-G2JAJVTW.js";
 import {
   __objRest,
   __spreadValues
