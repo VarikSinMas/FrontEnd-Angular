@@ -1,0 +1,34 @@
+<div class="container">
+  <button class="btn btn-dark mb-3" (click)="goToHome()">⬅ Listado</button>
+
+  <div class="player-detail">
+    <div class="row">
+      <div class="col-md-4">
+        <img [src]="player?.imageUrl" class="img-fluid" alt="{{ player?.name }}">
+      </div>
+      <div class="col-md-8">
+        <h2>{{ player?.name }}</h2>
+        <p><strong>Posición:</strong> {{ player?.position }}</p>
+        <p><strong>Edad:</strong> {{ player?.age }} años</p>
+        <p><strong>Altura:</strong> {{ player?.height }} cm</p>
+        <p><strong>Número:</strong> {{ player?.number }}</p>
+        <p><strong>Equipo:</strong> {{ player?.team }}</p>
+      </div>
+
+      <!-- Video de presentación -->
+      <div class="embed-responsive">
+        <video #videoPlayer controls>
+          <source [src]="'assets/videos/' + player?.videoUrl + '?t=' + timeStamp" type="video/mp4">
+          Tu navegador no soporta el elemento de video.
+        </video>
+      </div>
+      
+
+  <div class="d-flex justify-content-between mt-4">
+    <button (click)="goToPrevious()" class="btn-nav" [disabled]="playerIndex === 0">Anterior</button>
+    <button (click)="goToNext()" class="btn-nav" [disabled]="playerIndex === players.length - 1">Siguiente</button>
+  </div>
+
+    </div>
+  </div>
+</div>
